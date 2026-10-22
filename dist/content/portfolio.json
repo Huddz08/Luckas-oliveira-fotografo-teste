@@ -1,0 +1,78 @@
+[
+  {
+    "serviceId": "externo-feminino",
+    "cover": "/assets/portrait.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portrait.webp", "caption": "Retrato feminino em luz natural" },
+      { "image": "/assets/portfolio-estudio.webp", "caption": "Retrato e expressão" }
+    ]
+  },
+  {
+    "serviceId": "ensaio-estudio",
+    "cover": "/assets/portfolio-estudio.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portfolio-estudio.webp", "caption": "Retrato em estúdio" },
+      { "image": "/assets/portrait.webp", "caption": "Direção de retratos" }
+    ]
+  },
+  {
+    "serviceId": "festas-pequeno-porte",
+    "cover": "/assets/portfolio-festa.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portfolio-festa.webp", "caption": "Celebração entre amigos" },
+      { "image": "/assets/portfolio-infantil.webp", "caption": "Momentos de comemoração" },
+      { "image": "/assets/family.webp", "caption": "Afeto entre convidados" }
+    ]
+  },
+  {
+    "serviceId": "corporativo-gastronomico",
+    "cover": "/assets/portfolio-gastronomia.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portfolio-gastronomia.webp", "caption": "Fotografia de pratos" },
+      { "image": "/assets/portfolio-gastronomia-2.webp", "caption": "Produtos e detalhes gastronômicos" }
+    ]
+  },
+  {
+    "serviceId": "casamento",
+    "cover": "/assets/wedding-story.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/wedding-story.webp", "caption": "Histórias de casamento" },
+      { "image": "/assets/hero-wedding.webp", "caption": "Um dia especial" }
+    ]
+  },
+  {
+    "serviceId": "externo-casal",
+    "cover": "/assets/portfolio-casal.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portfolio-casal.webp", "caption": "Ensaio de casal ao ar livre" },
+      { "image": "/assets/wedding-story.webp", "caption": "Conexão e intimidade" },
+      { "image": "/assets/hero-wedding.webp", "caption": "Momentos a dois" }
+    ]
+  },
+  {
+    "serviceId": "festa-infantil",
+    "cover": "/assets/portfolio-infantil.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portfolio-infantil.webp", "caption": "A alegria da infância" },
+      { "image": "/assets/family.webp", "caption": "A família reunida" },
+      { "image": "/assets/portfolio-festa.webp", "caption": "Detalhes da comemoração" }
+    ]
+  },
+  {
+    "serviceId": "corporativo-externo",
+    "cover": "/assets/portfolio-corporativo.webp",
+    "visible": true,
+    "photos": [
+      { "image": "/assets/portfolio-corporativo.webp", "caption": "Fotografia de marcas e moda" },
+      { "image": "/assets/portfolio-corporativo-2.webp", "caption": "Produtos e acessórios" },
+      { "image": "/assets/portfolio-estudio.webp", "caption": "Retrato para marcas" }
+    ]
+  }
+]

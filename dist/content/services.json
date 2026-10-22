@@ -1,0 +1,82 @@
+[
+  {
+    "id": "externo-feminino",
+    "title": "Ensaio externo feminino",
+    "category": "ENSAIOS",
+    "description": "Um ensaio ao ar livre, no seu ritmo e com a sua personalidade.",
+    "details": ["50 fotos tratadas", "90 a 120 minutos de ensaio", "Até 2 trocas de looks", "Maquiagem e locomoção não inclusas"],
+    "price": 350,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "ensaio-estudio",
+    "title": "Ensaio em estúdio",
+    "category": "ENSAIOS",
+    "description": "Retratos com luz controlada e atenção a cada detalhe.",
+    "details": ["25 fotos tratadas", "90 minutos de ensaio", "3 looks"],
+    "price": 300,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "festas-pequeno-porte",
+    "title": "Festas de pequeno porte",
+    "category": "EVENTOS",
+    "description": "Cobertura para registrar os momentos da sua celebração.",
+    "details": ["4 horas de cobertura", "Sem limite de fotos", "Entrega em 7 dias"],
+    "price": 200,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "corporativo-gastronomico",
+    "title": "Ensaio gastronômico",
+    "category": "CORPORATIVO",
+    "description": "Imagens para apresentar pratos, produtos e experiências.",
+    "details": ["120 minutos de ensaio", "Até 50 fotos tratadas", "Entrega em 7 dias"],
+    "price": 350,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "casamento",
+    "title": "Casamento",
+    "category": "CASAMENTOS",
+    "description": "A história de um dia único, do jeito que ele acontece.",
+    "details": ["Dia da noiva", "Cerimônia e festa", "Casamento civil e outras opções", "Consulte os detalhes do pacote"],
+    "price": 800,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "externo-casal",
+    "title": "Ensaio externo de casal",
+    "category": "ENSAIOS",
+    "description": "Para guardar a conexão entre vocês, sem pressa.",
+    "details": ["30 fotos tratadas", "90 minutos de ensaio", "Até 1 troca de look", "Transporte não incluso"],
+    "price": 250,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "festa-infantil",
+    "title": "Festa infantil",
+    "category": "EVENTOS",
+    "description": "Os detalhes, as brincadeiras e as pequenas grandes emoções.",
+    "details": ["Até 4 horas de cobertura", "Fotos ilimitadas", "Entrega em 7 dias"],
+    "price": 300,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  },
+  {
+    "id": "corporativo-externo",
+    "title": "Fotografia corporativa externa",
+    "category": "CORPORATIVO",
+    "description": "Ensaios de marcas, roupas, acessórios e produtos.",
+    "details": ["90 minutos de ensaio", "Sem limite de fotos", "Entrega em 7 dias"],
+    "price": 250,
+    "visible": true,
+    "promotion": { "active": false, "label": "", "price": 0 }
+  }
+]

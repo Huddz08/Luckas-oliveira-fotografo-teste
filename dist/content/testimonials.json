@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Marina A.",
+    "type": "Ensaio externo feminino",
+    "quote": "Cheguei achando que não saberia posar. Aos poucos, o ensaio virou uma conversa leve, com espaço para rir e ser eu mesma. Foi exatamente essa sensação que eu queria guardar nas fotos.",
+    "image": "/assets/depoimento-exemplo-marina.webp",
+    "visible": true
+  },
+  {
+    "name": "Rafael M.",
+    "type": "Ensaio de casal",
+    "quote": "A gente queria um registro nosso, sem poses engessadas. O resultado parece um pedacinho da nossa história: os olhares, os gestos e até as risadas que ninguém planejou.",
+    "image": "/assets/depoimento-exemplo-rafael.webp",
+    "visible": true
+  },
+  {
+    "name": "Camila F.",
+    "type": "Fotografia corporativa",
+    "quote": "Queríamos apresentar nossa marca de um jeito mais próximo e verdadeiro. As imagens trouxeram cuidado aos detalhes, mas sem perder a personalidade do nosso trabalho.",
+    "image": "/assets/depoimento-exemplo-camila.webp",
+    "visible": true
+  }
+]

@@ -1,0 +1,185 @@
+media:
+  input: dist/assets
+  output: /assets
+  rename: safe
+  categories: [image]
+
+content:
+  - name: services
+    label: Serviços e pacotes
+    type: file
+    path: dist/content/services.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Identificador unico (sem espacos)
+        type: string
+        required: true
+      - name: title
+        label: Nome do servico
+        type: string
+        required: true
+      - name: category
+        label: Categoria
+        type: select
+        options:
+          values: [ENSAIOS, EVENTOS, CASAMENTOS, CORPORATIVO, OUTROS]
+      - name: description
+        label: Descricao curta
+        type: text
+      - name: details
+        label: Itens do pacote
+        type: string
+        list: true
+      - name: price
+        label: Preco normal (em reais)
+        type: number
+        required: true
+      - name: visible
+        label: Mostrar no site
+        type: boolean
+        default: true
+      - name: promotion
+        label: Promocao deste pacote
+        type: object
+        fields:
+          - name: active
+            label: Ativar promocao
+            type: boolean
+            default: false
+          - name: label
+            label: Selo (ex. Semana especial)
+            type: string
+          - name: price
+            label: Preco promocional (em reais)
+            type: number
+
+  - name: promotion
+    label: Promocao geral
+    type: file
+    path: dist/content/promotion.json
+    format: json
+    fields:
+      - name: active
+        label: Mostrar campanha
+        type: boolean
+      - name: label
+        label: Chamada curta
+        type: string
+      - name: title
+        label: Titulo da campanha
+        type: string
+      - name: description
+        label: Texto da campanha
+        type: text
+      - name: applyToAll
+        label: Aplicar desconto a todos os pacotes
+        type: boolean
+      - name: discountPercent
+        label: Desconto geral em porcentagem (0 a 99)
+        type: number
+
+  - name: appearance
+    label: Fotos de fundo
+    type: file
+    path: dist/content/appearance.json
+    format: json
+    fields:
+      - name: heroImage
+        label: Foto principal de abertura
+        type: image
+      - name: storyImage
+        label: Foto de fundo da secao de historia
+        type: image
+
+  - name: about
+    label: Sobre o Luckas (biografia e retrato)
+    type: file
+    path: dist/content/about.json
+    format: json
+    fields:
+      - name: portrait
+        label: Foto de Luckas
+        type: image
+      - name: portraitIsIllustrative
+        label: A foto ainda e ilustrativa
+        type: boolean
+        default: true
+      - name: portraitCaption
+        label: Legenda da foto
+        type: string
+      - name: intro
+        label: Frase de abertura
+        type: text
+      - name: biography
+        label: Breve apresentacao
+        type: text
+      - name: journey
+        label: Trajetoria pessoal
+        type: text
+      - name: philosophy
+        label: Visao sobre fotografia
+        type: text
+      - name: note
+        label: Nota de texto provisório (apagar quando validado)
+        type: string
+
+  - name: portfolio
+    label: Galerias do portfolio por servico
+    type: file
+    path: dist/content/portfolio.json
+    format: json
+    list: true
+    fields:
+      - name: serviceId
+        label: Codigo do servico correspondente
+        type: string
+        required: true
+      - name: cover
+        label: Foto de capa do servico
+        type: image
+      - name: visible
+        label: Mostrar no portfolio
+        type: boolean
+        default: true
+      - name: photos
+        label: Fotos desta galeria
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - name: image
+            label: Foto
+            type: image
+          - name: caption
+            label: Legenda (opcional)
+            type: string
+
+  - name: testimonials
+    label: Depoimentos
+    type: file
+    path: dist/content/testimonials.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Nome da pessoa
+        type: string
+        required: true
+      - name: type
+        label: Servico contratado
+        type: string
+      - name: quote
+        label: Depoimento
+        type: text
+        required: true
+      - name: image
+        label: Retrato
+        type: image
+      - name: visible
+        label: Mostrar no site
+        type: boolean
+        default: true

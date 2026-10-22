@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2b2d30" />
+  <meta name="description" content="Luckas Oliveira — fotografia de histórias, pessoas e encontros. Conheça o portfólio, as experiências e a área de galerias." />
+  <title>Luckas Oliveira — Fotografia Autoral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="graphite.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell" id="siteShell">
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="#inicio" aria-label="Luckas Oliveira, início">
+        <img class="brand-signature" src="assets/luckas-oliveira-logo-grafite.png" alt="Luckas Oliveira" />
+        <span class="brand-sub">F O T O G R A F I A</span>
+      </a>
+      <nav class="primary-nav" id="primaryNav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-portal" data-open-portal>Área do cliente <span aria-hidden="true">↗</span></button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-label="Apresentação">
+        <div class="hero-image" id="heroImage"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content layout-width">
+          <div class="hero-eyebrow"><span class="eyebrow-line"></span> FOTOGRAFIA AUTORAL &amp; AFETIVA</div>
+          <h1>O tempo passa.<br /><em>A história fica.</em></h1>
+          <p>Fotografias para guardar o que a memória sente — os encontros, os detalhes e tudo aquilo que não se repete.</p>
+          <a class="button-white" href="#portfolio">Conheça meu olhar <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-bottom layout-width"><span>LUCKAS OLIVEIRA © 2026</span><span class="hero-scroll">DESLIZE PARA DESCOBRIR <span aria-hidden="true">↓</span></span><span>01 / 04</span></div>
+        <div class="hero-side">MOMENTOS &nbsp;·&nbsp; MEMÓRIAS &nbsp;·&nbsp; HISTÓRIAS</div>
+      </section>
+
+      <div class="opening-note"><span class="note-star">✳</span><span>Existem momentos que merecem durar para sempre.</span><span class="note-star">✳</span></div>
+
+      <section class="portfolio-section section-pad" id="portfolio">
+        <div class="layout-width">
+          <div class="section-heading-row">
+            <div><div class="section-kicker"><span>01</span> / PORTFÓLIO</div><h2>Histórias em <em>imagens.</em></h2></div>
+            <p class="heading-aside">Escolha o tipo de fotografia para conhecer as imagens, os detalhes do pacote e o investimento.</p>
+          </div>
+          <div class="portfolio-grid" id="portfolioGrid"></div>
+          <div class="promotion-band" id="promotionBand" hidden><div><span class="promo-eyebrow" id="promotionLabel"></span><h3 id="promotionTitle"></h3><p id="promotionDescription"></p></div><button data-open-contact>Quero saber mais <span>↗</span></button></div>
+          <div class="portfolio-foot"><span>IMAGENS ILUSTRATIVAS NESTA VERSÃO · PORTFÓLIO REAL EM PREPARAÇÃO</span><button class="text-link" data-open-contact>Vamos criar a sua? <span aria-hidden="true">↗</span></button></div>
+        </div>
+      </section>
+
+      <section class="philosophy">
+        <div class="layout-width philosophy-inner"><span class="philosophy-label">O QUE NOS MOVE</span><p>Não é só sobre fotografar como tudo parecia. É sobre lembrar <em>como tudo se sentia.</em></p><span class="asterisk" aria-hidden="true">✳</span></div>
+      </section>
+
+      <section class="testimonial-section section-pad" id="depoimentos">
+        <div class="layout-width">
+          <div class="section-kicker"><span>02</span> / HISTÓRIAS COMPARTILHADAS</div>
+          <div class="testimonial-head"><h2>Mais do que fotos.<br /><em>Histórias para contar.</em></h2><div><p>Um espaço para quem já viveu uma experiência diante das lentes de Luckas.</p><span class="testimonial-disclaimer">RELATOS E PERSONAGENS FICTÍCIOS · CONTEÚDO ILUSTRATIVO DO PROTÓTIPO</span></div></div>
+          <div class="testimonial-frame" id="testimonialCarousel" role="region" aria-roledescription="carrossel" aria-label="Depoimentos ilustrativos">
+            <div class="testimonial-viewport" id="testimonialsViewport" tabindex="0" aria-label="Use as setas do teclado para avançar ou voltar nos depoimentos">
+              <div id="testimonialsList" class="testimonial-list"><p class="testimonial-loading">Carregando exemplos...</p></div>
+            </div>
+          </div>
+          <div class="testimonial-controls" id="testimonialControls">
+            <div class="testimonial-count" aria-live="off"><span id="testimonialCurrent">01</span><span class="testimonial-count-divider">/</span><span id="testimonialTotal">03</span><span class="testimonial-auto-hint">TRANSIÇÃO AUTOMÁTICA · DESLIZE PARA OS LADOS</span></div>
+            <div class="testimonial-dots" id="testimonialDots" aria-label="Selecionar depoimento"></div>
+            <div class="testimonial-arrows"><button type="button" id="testimonialPause" class="testimonial-pause" aria-label="Pausar transição automática" aria-pressed="false">Ⅱ</button><button type="button" id="testimonialPrev" aria-label="Depoimento anterior">←</button><button type="button" id="testimonialNext" aria-label="Próximo depoimento">→</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-image-strip" id="storyImageStrip" aria-label="Registro fotográfico ilustrativo"><div></div><div class="strip-overlay"><span>PARA ALÉM DA IMAGEM</span><h2>O extraordinário<br />mora no <em>simples.</em></h2></div></section>
+
+      <section class="about-section section-pad" id="sobre">
+        <div class="layout-width about-editorial">
+          <div class="about-visual">
+            <figure class="about-portrait-figure">
+              <img id="aboutPortrait" src="assets/luckas-sobre-ilustrativo.webp" loading="lazy" alt="Fotógrafo anônimo em estúdio — imagem ilustrativa, não é o Luckas" />
+              <figcaption id="aboutPortraitCaption">IMAGEM ILUSTRATIVA · AGUARDANDO RETRATO REAL DO LUCKAS</figcaption>
+            </figure>
+            <div class="about-photo-footer"><span>LUCKAS OLIVEIRA</span><span>POR TRÁS DAS LENTES · 01</span></div>
+          </div>
+          <div class="about-narrative">
+            <div class="section-kicker"><span>03</span> / SOBRE O FOTÓGRAFO</div>
+            <h2>Por trás<br /><em>do olhar.</em></h2>
+            <span class="about-narrative-rule"></span>
+            <p class="about-lead" id="aboutIntro">Antes de cada fotografia, existe uma história que merece ser escutada.</p>
+            <p class="about-biography" id="aboutBiography">Luckas Oliveira fotografa pessoas, encontros, celebrações e marcas.</p>
+            <div class="about-chapter"><span>01 / O PERCURSO</span><p id="aboutJourney">Esta trajetória pessoal será escrita com Luckas.</p></div>
+            <div class="about-chapter"><span>02 / A FILOSOFIA</span><p id="aboutPhilosophy">Há beleza nos detalhes e nos instantes espontâneos.</p></div>
+            <p class="about-editorial-note" id="aboutNote">TEXTO-BASE ILUSTRATIVO · BIOGRAFIA A CONFIRMAR COM LUCKAS</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey-section"><div class="layout-width"><div class="section-kicker muted"><span>04</span> / COMO FUNCIONA</div><div class="journey-head"><h2>Simples, do início<br /><em>ao último clique.</em></h2><p>Uma jornada tranquila, para você aproveitar o momento enquanto eu cuido das lembranças.</p></div><div class="journey-steps"><div><span>01</span><h3>Uma conversa</h3><p>Você conta sua ideia e alinhamos o estilo, o lugar e os detalhes do seu ensaio.</p></div><div><span>02</span><h3>Seu momento</h3><p>Um encontro sem pressa, com direção natural e espaço para ser você.</p></div><div><span>03</span><h3>Para reviver</h3><p>As imagens são selecionadas, tratadas e entregues em uma galeria digital.</p></div></div></div></section>
+
+      <section class="client-teaser" id="galeria"><div class="layout-width client-inner"><div><div class="section-kicker light"><span>05</span> / ÁREA DO CLIENTE</div><h2>Suas memórias,<br /><em>em um lugar especial.</em></h2><p>Seu ensaio merece um cantinho só dele. Entre com o código da sua galeria para reviver cada imagem.</p><button class="button-cream" data-open-portal>Acessar minha galeria <span aria-hidden="true">↗</span></button></div><div class="client-decor"><span>LO<span class="decor-star">✳</span></span><small>MEMÓRIAS PARA GUARDAR</small></div></div></section>
+
+      <section class="contact-section section-pad" id="contato">
+        <div class="layout-width contact-row contact-direct-row">
+          <div><div class="section-kicker"><span>06</span> / VAMOS CONVERSAR</div><h2>O próximo capítulo<br />pode ser <em>o seu.</em></h2></div>
+          <div class="contact-direct"><p>Para conversar sobre seu ensaio ou acompanhar meus trabalhos, escolha por onde quer falar comigo.</p>
+            <div class="contact-channel-list">
+              <a class="contact-channel" href="https://www.instagram.com/oliveiraluckas/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o Instagram de Luckas Oliveira">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.7" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+                <span>Instagram</span><span class="contact-channel-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="contact-channel" href="https://wa.me/5521964963444?text=Ol%C3%A1%2C%20Luckas!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Luckas pelo WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.7 7.5L3 20.6l1.5-4.6A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M9 8.5c-.4-.6-.8-.6-1-.2-.4.6-.5 1.2-.2 1.9 1 2.3 3.3 4.5 5.6 5.2.6.2 1.1.1 1.7-.4l.7-.9c.2-.3.1-.5-.2-.7l-1.7-.8c-.3-.1-.5 0-.6.2l-.6.7a7.7 7.7 0 0 1-3.2-3.1l.7-.7c.2-.2.2-.4.1-.6Z"/></svg>
+                <span>WhatsApp</span><span class="contact-channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="layout-width"><div class="footer-main"><a class="brand footer-brand" href="#inicio"><img class="brand-signature" src="assets/luckas-oliveira-logo-grafite.png" alt="Luckas Oliveira" /><span class="brand-sub">F O T O G R A F I A</span></a><p>Guarde o que importa.<br />O resto, o tempo leva.</p><a class="to-top" href="#inicio">Voltar ao topo ↑</a></div><div class="footer-bottom"><span>© 2026 LUCKAS OLIVEIRA. PROTÓTIPO CONCEITUAL.</span><span>DESENVOLVIDO COM CUIDADO PARA CADA DETALHE.</span></div></div></footer>
+
+    <nav class="contact-dock" aria-label="Acessos rápidos a redes sociais e contato">
+      <a class="contact-dock-link" href="https://www.instagram.com/oliveiraluckas/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram de Luckas Oliveira" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.7" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="contact-dock-link" href="https://wa.me/5521964963444?text=Ol%C3%A1%2C%20Luckas!%20Gostaria%20de%20conversar%20sobre%20um%20ensaio%20fotogr%C3%A1fico." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Luckas no WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.7 7.5L3 20.6l1.5-4.6A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M9 8.5c-.4-.6-.8-.6-1-.2-.4.6-.5 1.2-.2 1.9 1 2.3 3.3 4.5 5.6 5.2.6.2 1.1.1 1.7-.4l.7-.9c.2-.3.1-.5-.2-.7l-1.7-.8c-.3-.1-.5 0-.6.2l-.6.7a7.7 7.7 0 0 1-3.2-3.1l.7-.7c.2-.2.2-.4.1-.6Z"/></svg>
+      </a>
+    </nav>
+  </div>
+
+  <dialog id="portalDialog" class="surface-dialog portal-dialog"><button class="close-dialog" data-close-dialog aria-label="Fechar">×</button><div class="portal-cover"><span>GALERIAS PRIVADAS</span><h2>Momentos seus.<br /><em>Só seus.</em></h2><p>Acesse suas fotografias com o código recebido após a sessão.</p><div class="portal-monogram"><img src="assets/luckas-oliveira-logo-grafite.png" alt="Luckas Oliveira" /></div></div><div class="portal-form-area" id="portalContent"><div class="small-kicker">ACESSO À GALERIA</div><h3>Que bom ter<br />você aqui.</h3><form id="portalForm"><label for="galleryCode">Código de acesso</label><input id="galleryCode" type="text" placeholder="Ex.: LUCKAS2026" autocomplete="off" required /><button class="dark-submit" type="submit">Ver minhas fotos <span>↗</span></button></form><p class="demo-tip">Para explorar o protótipo, use o código <button id="fillDemoCode">LUCKAS2026</button>.</p><p class="portal-error" id="portalError" role="alert"></p><small>Protótipo: este código não oferece segurança real. Não use com fotos privadas.</small></div></dialog>
+
+  <dialog id="contactDialog" class="surface-dialog contact-dialog"><button class="close-dialog" data-close-dialog aria-label="Fechar">×</button><div class="contact-modal-head"><div class="small-kicker">FALE DIRETAMENTE COM LUCKAS</div><h2>Conte sua <em>história.</em></h2><p>Preencha os detalhes e continue a conversa diretamente pelo WhatsApp.</p></div><form id="contactForm"><div class="field-row"><label>Seu nome<input name="name" type="text" placeholder="Como podemos te chamar?" required /></label><label>Data desejada <span class="optional-hint">(opcional)</span><input name="date" type="text" placeholder="Ex.: 15 de novembro" maxlength="80" /></label></div><label>O que você procura?<select name="service" id="serviceSelect"><option value="Outro">Outro serviço</option></select></label><label>Me conte um pouco<textarea name="message" rows="3" maxlength="1200" placeholder="Ocasião, local, ideias ou dúvidas sobre o ensaio..."></textarea></label><button class="dark-submit" type="submit">Conversar no WhatsApp <span>↗</span></button><p class="form-footnote">Ao continuar, o WhatsApp abrirá com sua mensagem pronta. Revise e toque em <strong>Enviar</strong> para falar com Luckas.</p></form></dialog>
+
+  <dialog id="portfolioDialog" class="collection-dialog" aria-label="Galeria do serviço"><button type="button" class="collection-close" data-close-dialog aria-label="Fechar galeria">Fechar <span aria-hidden="true">×</span></button><div id="portfolioContent"></div></dialog>
+
+  <dialog id="imageDialog" class="image-dialog"><button class="image-dialog-close" data-close-dialog aria-label="Fechar">×</button><img id="lightboxImage" alt="" /><div class="lightbox-caption"><span id="lightboxType"></span><strong id="lightboxTitle"></strong></div></dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -168,16 +168,20 @@
     const regular = Number(service.price);
     if (!Number.isFinite(regular) || regular < 0) return { regular: null, discount: null };
     const individual = Number(service.promotion?.price);
-    if (service.promotion?.active === true && individual > 0 && individual < regular) {
+    if (service.promotion?.active === true && !offerExpired(service.promotion) && individual > 0 && individual < regular) {
       return { regular, discount: individual, label: service.promotion.label || 'OFERTA ESPECIAL' };
     }
     const global = content.promotion;
     const percent = Number(global.discountPercent);
-    if (global.active === true && global.applyToAll === true && percent > 0 && percent < 100) {
+    if (global.active === true && !offerExpired(global) && global.applyToAll === true && percent > 0 && percent < 100) {
       const discounted = Math.round(regular * (1 - percent / 100) * 100) / 100;
       return { regular, discount: discounted, label: `${percent}% OFF` };
     }
     return { regular, discount: null, label: '' };
+  }
+
+  function offerExpired(offer) {
+    return Boolean(offer?.validUntil && offer.validUntil < new Date().toISOString().slice(0, 10));
   }
 
   function renderServiceOptions() {
@@ -323,7 +327,7 @@
   function renderPromotion() {
     const promotion = content.promotion;
     const band = $('#promotionBand');
-    band.hidden = promotion.active !== true;
+    band.hidden = promotion.active !== true || offerExpired(promotion);
     if (band.hidden) return;
     $('#promotionLabel').textContent = promotion.label || 'CAMPANHA ESPECIAL';
     $('#promotionTitle').textContent = promotion.title || 'Uma oportunidade especial';
@@ -426,6 +430,29 @@
       if (result.status === 'fulfilled') content[files[index]] = result.value;
       else console.warn('Conteúdo não carregado:', files[index]);
     });
+    // Conteúdo dinâmico da Cloudflare tem prioridade; os JSON do GitHub são o fallback.
+    // Este endpoint contém apenas dados publicáveis, nunca fotos privadas ou senhas.
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 6000);
+      let response;
+      try {
+        response = await fetch('https://luckas-fotografia-api.hudsonamorim08.workers.dev/api/content',
+          {cache:'no-store',signal:controller.signal});
+      } finally {
+        clearTimeout(timeout);
+      }
+      if (response.ok) {
+        const result = await response.json();
+        if (result.configured && result.content) {
+          files.forEach(name => {
+            if (Object.prototype.hasOwnProperty.call(result.content,name)) content[name]=result.content[name];
+          });
+        }
+      }
+    } catch (_error) {
+      // Se a API falhar, o site continua disponível com os dados estáticos.
+    }
     if (!Array.isArray(content.services)) content.services = [];
     if (!Array.isArray(content.portfolio)) content.portfolio = [];
     if (!Array.isArray(content.testimonials)) content.testimonials = [];

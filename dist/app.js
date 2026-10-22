@@ -13,9 +13,11 @@
     family: 'assets/family.webp'
   };
 
-  // Only images checked into this site's public asset folder may be used.
+  // Public images come either from the original GitHub assets or from the R2-backed API.
+  const uploadedImagePattern = /^https:\/\/luckas-fotografia-api\.hudsonamorim08\.workers\.dev\/api\/images\/media\/[a-f0-9-]{36}\.(jpg|png|webp)$/;
   function imagePath(value, fallback = fallbackImages.hero) {
     if (typeof value !== 'string') return fallback;
+    if (uploadedImagePattern.test(value)) return value;
     const clean = value.replace(/^\//, '');
     return /^assets\/[a-z0-9_./-]+\.(png|jpe?g|webp|gif|avif)$/i.test(clean) && !clean.includes('..')
       ? clean : fallback;
@@ -97,7 +99,7 @@
     grid.innerHTML = collections.length
       ? collections.map(({ service, album }, index) => `
         <button class="portfolio-card collection-card" type="button" data-collection-index="${index}" aria-label="Abrir portfólio: ${escapeHTML(service.title)}">
-          <span class="photo"><img src="${imagePath(album.cover, fallbackImages.portrait)}" alt="${escapeHTML(service.title)} — imagem ilustrativa" loading="lazy" /><span class="collection-overlay">VER FOTOS E PACOTE <span aria-hidden="true">↗</span></span></span>
+          <span class="photo"><img src="${imagePath(album.cover, fallbackImages.portrait)}" alt="${escapeHTML(service.title)}" loading="lazy" /><span class="collection-overlay">VER FOTOS E PACOTE <span aria-hidden="true">↗</span></span></span>
           <span class="photo-label"><strong>${escapeHTML(service.title)}</strong><span>${escapeHTML(service.category || 'FOTOGRAFIA')}</span></span>
         </button>`).join('')
       : '<p class="portfolio-empty">As galerias estão sendo preparadas. Entre em contato para ver mais informações.</p>';
@@ -118,7 +120,7 @@
     const cover = imagePath(album.cover, fallbackImages.portrait);
     contentArea.innerHTML = `
       <div class="collection-intro">
-        <div class="collection-cover"><img src="${cover}" alt="${escapeHTML(service.title)} — foto ilustrativa" /></div>
+        <div class="collection-cover"><img src="${cover}" alt="${escapeHTML(service.title)}" /></div>
         <div class="collection-intro-copy">
           <span class="collection-kicker">${escapeHTML(service.category || 'FOTOGRAFIA')} / PORTFÓLIO</span>
           <h2>${escapeHTML(service.title)}</h2>
@@ -139,7 +141,7 @@
         </div>
       </div>
       <div class="collection-gallery-area">
-        <div class="collection-gallery-heading"><h3>Um olhar sobre <em>esta experiência.</em></h3><p>Imagens ilustrativas para este protótipo. O acervo real será incluído por Luckas.</p></div>
+        <div class="collection-gallery-heading"><h3>Um olhar sobre <em>esta experiência.</em></h3><p>${photos.some(photo=>uploadedImagePattern.test(photo.image)) ? 'Fotografias selecionadas por Luckas.' : 'Imagens ilustrativas; Luckas acrescentará seu acervo autoral.'}</p></div>
         <div class="collection-photo-grid">${photos.map((photo, index) => `
           <button type="button" class="collection-photo" data-gallery-photo="${index}" aria-label="Ampliar: ${escapeHTML(photo.caption || service.title)}">
             <img src="${imagePath(photo.image, cover)}" loading="lazy" alt="${escapeHTML(photo.caption || service.title)}" />
@@ -208,9 +210,9 @@
           <div class="testimonial-copy">
             <span class="testimonial-quote-mark" aria-hidden="true">“</span>
             <blockquote>${escapeHTML(item.quote || '')}</blockquote>
-            <div class="testimonial-person"><strong>${escapeHTML(item.name || 'Cliente ilustrativo')}</strong><span>${escapeHTML(item.type || 'Experiência fotográfica')} · Personagem fictício</span></div>
+            <div class="testimonial-person"><strong>${escapeHTML(item.name || 'Cliente ilustrativo')}</strong><span>${escapeHTML(item.type || 'Experiência fotográfica')}${item.verified === true ? '' : ' · Exemplo fictício'}</span></div>
           </div>
-          <div class="testimonial-portrait"><img src="${imagePath(item.image, fallbackImages.portrait)}" alt="Retrato ilustrativo de ${escapeHTML(item.name || 'uma pessoa fictícia')}" loading="lazy" /></div>
+          <div class="testimonial-portrait"><img src="${imagePath(item.image, fallbackImages.portrait)}" alt="${item.verified === true ? 'Retrato de ' : 'Imagem ilustrativa de '}${escapeHTML(item.name || 'cliente')}" loading="lazy" /></div>
         </article>`).join('');
   }
 
@@ -332,6 +334,11 @@
     $('#promotionLabel').textContent = promotion.label || 'CAMPANHA ESPECIAL';
     $('#promotionTitle').textContent = promotion.title || 'Uma oportunidade especial';
     $('#promotionDescription').textContent = promotion.description || 'Consulte os detalhes da campanha.';
+    band.style.backgroundImage = promotion.image
+      ? `linear-gradient(90deg,rgba(231,233,222,.96),rgba(231,233,222,.82)),url("${imagePath(promotion.image, fallbackImages.story)}")`
+      : '';
+    band.style.backgroundSize = 'cover';
+    band.style.backgroundPosition = 'center';
   }
 
   function openContact(service = '') {
